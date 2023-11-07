@@ -16,7 +16,7 @@ const Footer = () => {
                 <header className="footer-title">Social</header>
                 <div className="grid grid-flow-col gap-4">
                     
-                    <a className='text-3xl text-cyan-500'><FaFacebook></FaFacebook></a>
+                    <a className='text-3xl text-sky-500'><FaFacebook></FaFacebook></a>
                     <a className='text-3xl text-blue-600'><FaTwitter></FaTwitter></a>
                     <a className='text-3xl text-red-600'><FaYoutube></FaYoutube></a>
                 </div>

@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     const navItems = <>
     <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/'>Home</Link></li>
-    <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/'>Available Foods</Link></li>
-    <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/'>Add Food</Link></li>
-    <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/'>ManageMyFood</Link></li>
-    <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/'>MyFoodRequest</Link></li>
-    <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/'>Login</Link></li>
+    <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/available'>Available Foods</Link></li>
+    <li><Link className="text-lg text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/add'>Add Food</Link></li>
+    <li><Link className="text-lg text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/manage'>ManageMyFood</Link></li>
+    <li><Link className="text-lg text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/request'>MyFoodRequest</Link></li>
+    <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/login'>Login</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">

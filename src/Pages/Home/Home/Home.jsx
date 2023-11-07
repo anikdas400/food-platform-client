@@ -1,9 +1,12 @@
+import Banner from "../Banner/Banner";
+import Partners from "../Partners/Partners";
 
 
 const Home = () => {
     return (
         <div>
-            <h2 className="text-4xl text-center">this is Home page</h2>
+            <Banner></Banner>
+            <Partners></Partners>
         </div>
     );
 };
