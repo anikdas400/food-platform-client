@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { useState } from "react";
 
 
 const SignUp = () => {
 
+    const [signUpError,setSignUpError] = useState('')
+    const [success,setSuccess] = useState('')
     const {createUser}=useContext(AuthContext)
 
     const handleSignUp = event =>{
@@ -14,13 +17,28 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name,email,password)
+
+        setSignUpError('')
+        setSuccess('')
+
+        if(password.length < 6){
+            setSignUpError('Your password should be at least 6 characters')
+            return
+        }
+        else if(!/[A-Z]/.test(password)){
+            setSignUpError('Your password should be at least one UpperCase character')
+            return
+        }
         createUser(email,password)
         .then(result=>{
             const user = result.user
+            setSuccess('User created successfully')
+            event.target.reset()
             console.log(user)
         })
         .catch(error=>{
             console.error(error);
+            setSignUpError(error.message)
         })
     }
     
@@ -59,8 +77,13 @@ const SignUp = () => {
                             <button type="submit" className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
+
+                    {
+                        signUpError?  <p className="text-red-700 font-semibold mb-2 text-center">{signUpError}</p>:
+                        <p className="text-green-700 font-semibold mb-2 text-center">{success}</p>
+                    }
                     
-                    {/* <p className="text-center">Or sign in with <button className="btn bg-gradient-to-r from-sky-300 to-indigo-300 font-semibold text-green-500">Google</button> </p> */}
+                    
                     <p className="text-center mb-3">Already have an account?please <Link className="text-purple-700 font-bold text-lg" to="/login">sign in</Link> </p>
                     
                 </div>
