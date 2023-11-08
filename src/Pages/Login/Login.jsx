@@ -16,7 +16,10 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        // console.log(email, password)
+
+
+        
 
         // reset error
         setSignUpError('')
@@ -31,6 +34,8 @@ const Login = () => {
             return
         }
 
+        
+
         // createUser in firebase
         signIn(email, password)
             .then(result => {
@@ -44,7 +49,6 @@ const Login = () => {
                 setSignUpError(error.message)
             })
 
-        //sign with Google 
         
         
 
@@ -88,7 +92,10 @@ const Login = () => {
                     }
 
                     <p  className="text-center">Or sign in with <button  className="btn bg-gradient-to-r from-sky-300 to-indigo-300 font-semibold text-green-500">Google</button> </p>
+                    
                     <p className="text-center mb-3">Do not have an account?please <Link className="text-purple-700 font-bold text-lg" to="/signup">Sign Up</Link> </p>
+
+                    
 
                 </div>
             </div>
