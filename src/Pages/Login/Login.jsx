@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useState } from "react";
 
@@ -9,6 +9,9 @@ const Login = () => {
     const [signUpError, setSignUpError] = useState('')
     const [success, setSuccess] = useState('')
     const { signIn} = useContext(AuthContext)
+    const location = useLocation()
+    console.log(location)
+    const navigate = useNavigate()
 
 
     const handleLogin = event => {
@@ -42,6 +45,7 @@ const Login = () => {
                 const user = result.user
                 setSuccess('User logged successfully')
                 event.target.reset()
+                navigate(location?.state ? location.state : '/')
                 console.log(user)
             })
             .catch(error => {

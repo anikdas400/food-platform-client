@@ -64,9 +64,9 @@ const AvailCard = ({ food,foodD,setFoodD }) => {
                </div>
 
                 <div className=" justify-end">
-                {/* <Link to={`/details/${_id}`}>
+                <Link to={`/details/${_id}`}>
                 <button className="btn bg-gradient-to-r from-purple-500 to-pink-500">Details</button>
-                </Link> */}
+                </Link>
                 </div>
             </div>
             <div className="flex gap-6 justify-center">
