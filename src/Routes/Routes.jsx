@@ -7,6 +7,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import AddFood from "../Product/AddFood";
 import Details from "../Product/Details";
 import AvailableFood from "../Pages/AvailableFood/AvailableFood";
+import UpdateFood from "../Product/UpdateFood";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
           path:'/available',
           element:<AvailableFood></AvailableFood>,
           loader:()=>fetch('http://localhost:5000/food')
+        },
+        {
+          path:'/updatefood/:id',
+          element:<UpdateFood></UpdateFood>,
+          loader:({params})=>fetch(`http://localhost:5000/food/${params.id}`)
         },
         {
           path:'/details/:id',

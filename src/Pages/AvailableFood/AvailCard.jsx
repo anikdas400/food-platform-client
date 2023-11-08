@@ -1,6 +1,7 @@
 // import { Link } from "react-router-dom";
 
 
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -69,7 +70,7 @@ const AvailCard = ({ food,foodD,setFoodD }) => {
                 </div>
             </div>
             <div className="flex gap-6 justify-center">
-                <button className="btn btn-success btn-outline">updated</button>
+                <Link to={`/updatefood/${_id}`}><button className="btn btn-success btn-outline">updated</button></Link>
                 <button onClick={()=>handleDelete(_id)} className="btn btn-success btn-outline">delete</button>
             </div>
 
