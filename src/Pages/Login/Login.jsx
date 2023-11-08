@@ -2,13 +2,14 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
 
 
 const Login = () => {
 
     const [signUpError, setSignUpError] = useState('')
     const [success, setSuccess] = useState('')
-    const { signIn} = useContext(AuthContext)
+    const { signIn, signInWithgoogle } = useContext(AuthContext)
     const location = useLocation()
     console.log(location)
     const navigate = useNavigate()
@@ -22,7 +23,7 @@ const Login = () => {
         // console.log(email, password)
 
 
-        
+
 
         // reset error
         setSignUpError('')
@@ -37,7 +38,7 @@ const Login = () => {
             return
         }
 
-        
+
 
         // createUser in firebase
         signIn(email, password)
@@ -53,13 +54,16 @@ const Login = () => {
                 setSignUpError(error.message)
             })
 
-        
-        
+    }
 
-
-
-
-
+    const handleGoogleSignin = ()=>{
+        signInWithgoogle()
+        .then(result=>{
+            console.log(result.user)
+        })
+        .catch(error=>{
+            console.error(error);
+        })
     }
     return (
         <div className="hero min-h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% rounded-t-lg">
@@ -94,12 +98,14 @@ const Login = () => {
                         signUpError ? <p className="text-red-700 font-semibold mb-2 text-center">{signUpError}</p> :
                             <p className="text-green-700 font-semibold mb-2 text-center">{success}</p>
                     }
+                    <h2 className="text-center text-lg font-semibold text-purple-900 underline">OR</h2>
 
-                    <p  className="text-center">Or sign in with <button  className="btn bg-gradient-to-r from-sky-300 to-indigo-300 font-semibold text-green-500">Google</button> </p>
+                    <p className="text-center">sign in with<button onClick={handleGoogleSignin} className="btn btn-ghost font-bold text-purple-900"><FcGoogle className="text-lg"></FcGoogle>Google</button></p>
+
                     
                     <p className="text-center mb-3">Do not have an account?please <Link className="text-purple-700 font-bold text-lg" to="/signup">Sign Up</Link> </p>
 
-                    
+
 
                 </div>
             </div>

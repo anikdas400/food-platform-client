@@ -14,12 +14,12 @@ const Navbar = () => {
             })
     }
     const navItems = <>
-        <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/'>Home</Link></li>
-        <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/available'>Available Foods</Link></li>
-        <li><Link className="text-lg text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/add'>Add Food</Link></li>
-        <li><Link className="text-lg text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/manage'>ManageMyFood</Link></li>
-        <li><Link className="text-lg text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/request'>MyFoodRequest</Link></li>
-        <li><Link className="text-lg text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/signup'>Sign UP</Link></li>
+        <li><Link className="text-base text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/'>Home</Link></li>
+        <li><Link className="text-base text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/available'>Available Foods</Link></li>
+        <li><Link className="text-base text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/add'>Add Food</Link></li>
+        <li><Link className="text-base text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/manage'>ManageMyFood</Link></li>
+        <li><Link className="text-base text-violet-800 hover:text-sky-500 hover:bg-white hover:underline font-semibold" to='/request'>MyFoodRequest</Link></li>
+        <li><Link className="text-base text-violet-800 hover:text-green-700 hover:bg-white hover:underline font-semibold" to='/signup'>Sign UP</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ? <>
-                        <img className="w-14 h-14 rounded-full mr-2" src={user?.photoURL} alt="" />
+                        <img className="w-12 h-12 rounded-full mr-2" src={user?.photoURL} alt="" />
                         <span className="mr-2">{user.displayName}</span>
                         <button onClick={handleLogOut} className="btn btn-success"><NavLink to='/'>LogOut</NavLink></button>
                     </> : <button className="btn btn-success"><NavLink to='/login'>Login</NavLink></button>
