@@ -3,7 +3,7 @@ import Banner from "../Banner/Banner";
 import Partners from "../Partners/Partners";
 import About from "../About/About";
 import { Link, useLoaderData } from "react-router-dom";
-// import FoodCard from "./FoodCard";
+import FoodCard from "./FoodCard";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
@@ -11,7 +11,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Home = () => {
     const {user}=useContext(AuthContext)
-    // const foods = useLoaderData()
+    const foods = useLoaderData()
     return (
         <div>
             <Helmet>
@@ -23,9 +23,9 @@ const Home = () => {
                 Our Food Items
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                {/* {
+                {
                     foods.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
-                } */}
+                }
 
                
 

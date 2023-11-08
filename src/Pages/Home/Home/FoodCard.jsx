@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const FoodCard = ({ food }) => {
-    const { _id, foodn, quantity, photo, date, description, location, imgUrl, dname } = food
+    const { _id, foodn, quantity, photo, date, description, imgUrl, dname } = food
     
     console.log(_id)
     return (
@@ -29,10 +29,7 @@ const FoodCard = ({ food }) => {
                     </Link>
                     </div>
                 </div>
-                <div className="flex gap-6 justify-center">
-                    <button className="btn btn-success btn-outline">updated</button>
-                    <button className="btn btn-success btn-outline">delete</button>
-                </div>
+                
 
 
 
