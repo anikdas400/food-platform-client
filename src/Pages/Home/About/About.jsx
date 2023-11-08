@@ -3,7 +3,7 @@
 const About = () => {
     return (
         <div>
-            <h2 className="text-4xl font-bold text-teal-600 italic mb-3 mt-9 text-center">About Us</h2>
+            <h2 className="text-4xl font-bold text-teal-600 italic mb-8 mb-3 mt-14 text-center underline">About Us</h2>
             <div className="hero bg-base-200">
                 <div className="hero-content flex-col lg:flex-row gap-20">
                     <img src="https://i.ibb.co/fpghWnW/poor.jpg" className="max-w-lg rounded-lg shadow-2xl" />
