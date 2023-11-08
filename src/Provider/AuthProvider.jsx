@@ -24,11 +24,7 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
 
-    // signInWithGoogle
-    // const signInWithGoogle =()=>{
-    //     setLoading(true)
-    //     return signInWithPopup(auth,googleProvider)
-    // }
+    
 
     const createUser =(email,password)=>{
         setLoading(true)
