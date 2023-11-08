@@ -1,10 +1,14 @@
 // import { Link } from "react-router-dom";
 
+
 import Swal from "sweetalert2";
 
 
-const AvailCard = ({ food }) => {
-    const { _id, foodn, quantity, photo, date, description, location, imgUrl, dname } = food
+const AvailCard = ({ food,foodD,setFoodD }) => {
+    const { _id, foodn, quantity, photo, date, description, imgUrl, dname } = food
+    
+
+
     const handleDelete = _id =>{
         console.log(_id)
         Swal.fire({
@@ -17,11 +21,25 @@ const AvailCard = ({ food }) => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
-              });
+              
+
+            fetch(`http://localhost:5000/food/${_id}`,{
+                method:'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                if(data.deletedCount > 0){
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your Food has been deleted.",
+                        icon: "success"
+                      });
+
+                      const remaning = foodD.filter(foo=>foo._id !== _id)
+                      setFoodD(remaning)
+                }
+            })
             }
           });
     }
