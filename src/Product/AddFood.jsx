@@ -1,10 +1,10 @@
-
+import Swal from 'sweetalert2'
 
 const AddFood = () => {
     const handleAddFood = event =>{
         event.preventDefault()
         const form = event.target
-        const food = form.food.value;
+        const foodn = form.foodn.value;
         const photo = form.photo.value;
         const quantity = form.quantity.value;
         const description = form.description.value;
@@ -12,8 +12,29 @@ const AddFood = () => {
         const location = form.location.value
         const imgUrl = form.imgUrl.value
         const dname = form.dname.value
-        const newCar = {food,quantity,photo,date,description,location,imgUrl,dname}
-        console.log(newCar)
+        const newFood = {foodn,quantity,photo,date,description,location,imgUrl,dname}
+        console.log(newFood)
+
+        // send data to the server
+        fetch('http://localhost:5000/food',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(newFood)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'success',
+                    text: 'Food Added Successfully ',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
     }
     return (
         <div className="bg-[#F4F3F0] P-8 rounded-lg">
@@ -28,7 +49,7 @@ const AddFood = () => {
                     </label>
                     <label className="input-group">
 
-                        <input type="text" placeholder="Food Name" name="food" className="input input-bordered w-full" />
+                        <input type="text" placeholder="Food Name" name="foodn" className="input input-bordered w-full" />
                     </label>
                 </div>
                 <div className="form-control  md:w-1/2">
