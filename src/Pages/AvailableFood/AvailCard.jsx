@@ -24,7 +24,7 @@ const AvailCard = ({ food,foodD,setFoodD }) => {
             if (result.isConfirmed) {
               
 
-            fetch(`http://localhost:5000/food/${_id}`,{
+            fetch(` http://localhost:5000/food/${_id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
@@ -60,7 +60,7 @@ const AvailCard = ({ food,foodD,setFoodD }) => {
             <div className="flex gap-40">
                <div className="flex gap-2 justify-center items-center">
                <img className="h-16 w-16 rounded-full" src={imgUrl} alt="" />
-                <h2>{dname}</h2>
+                <h2 className="font-semibold">{dname}</h2>
                </div>
 
                 <div className=" justify-end">

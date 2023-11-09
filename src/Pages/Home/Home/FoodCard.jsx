@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FoodCard = ({ food }) => {
     const { _id, foodn, quantity, photo, date, description, imgUrl, dname } = food
     
-    console.log(_id)
+    // console.log(_id)
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure><img className="h-44 w-72 mt-3 rounded-lg ml-3" src={photo} alt="food" /></figure>

@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 import AvailCard from "./AvailCard";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 const AvailableFood = () => {
@@ -9,6 +10,9 @@ const AvailableFood = () => {
     const [foodD,setFoodD] =useState(foods)
     return (
         <div>
+            <Helmet>
+                <title>The Culinary Cuddles | AvailableFood</title>
+            </Helmet>
             <h2 className="text-4xl font-bold text-center italic text-green-800 mt-12 mb-8 underline">
                 Our Food Items
             </h2>

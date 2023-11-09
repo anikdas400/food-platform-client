@@ -20,7 +20,7 @@ const UpdateFood = () => {
         console.log(updateFood)
 
         // send data to the server
-        fetch(`http://localhost:5000/food/${_id}`,{
+        fetch(` http://localhost:5000/food/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2'
 
 const AddFood = () => {
@@ -16,7 +17,7 @@ const AddFood = () => {
         console.log(newFood)
 
         // send data to the server
-        fetch('http://localhost:5000/food',{
+        fetch(' http://localhost:5000/food',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -38,6 +39,9 @@ const AddFood = () => {
     }
     return (
         <div className="bg-[#F4F3F0] P-8 rounded-lg">
+            <Helmet>
+                <title>The Culinary Cuddles | AddFood</title>
+            </Helmet>
         <h1 className="text-5xl font-bold italic text-center text-purple-800">Add New Food</h1>
         
         <form onSubmit={handleAddFood} className="p-8">
